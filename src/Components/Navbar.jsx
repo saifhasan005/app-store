@@ -10,7 +10,7 @@ const Navbar = () => {
         `font-semibold pb-[5px] ${isActive ? 'border-b border-purple-500 text-purple-700' : ''}`;
 
     return (
-        <div className='shadow'>
+        <div className='shadow sticky top-0 z-50 bg-white'>
             <nav className='flex items-center py-2 justify-between container mx-auto gap-4 px-4'>
                 <img src={logo} alt="Logo" className='w-[40px]' />
 
