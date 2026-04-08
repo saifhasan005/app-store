@@ -1,15 +1,10 @@
-import React, { use, useState } from 'react';
 import { HashLoader } from 'react-spinners';
 import AppCard from '../UI/AppCard';
-const appdata = fetch('/data.json').then((res) => res.json());
+import USeApp from '../Hooks/USeApp';
+
 const AllApps = () => {
-    const [apps, setApps] = useState([]);
-    const [loading, setloading] = useState(true);
-    const data = use(appdata);
-    setTimeout(() => {
-        setApps(data);
-        setloading(false);
-    }, 2000)
+    const {apps, loading} = USeApp();
+
     return (
         <div className='container mx-auto mt-[45px]'>
                <p className='text-center font-bold mb-[15px] text-4xl '>Trending Apps</p>

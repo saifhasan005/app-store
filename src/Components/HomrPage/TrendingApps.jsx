@@ -1,23 +1,17 @@
-import React, { use, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { FaDownLong } from 'react-icons/fa6';
 import AppCard from '../UI/AppCard';
 import { HashLoader, } from 'react-spinners';
 import { Link } from 'react-router';
+import USeApp from '../Hooks/USeApp';
 
-const appdata = fetch('/data.json').then((res) => res.json());
+
 const TrendingApps = () => {
-    const [apps, setApps] = useState([]);
-    const [loading, setloading] = useState(true);
-    const data = use(appdata);
-    setTimeout(() => {
-        setApps(data);
-        setloading(false);
-    }, 2000)
+ const {apps, loading} = USeApp(); 
     // console.log(data);
     return (
         <div className='container mx-auto mt-[45px]'>
-            <p className='text-center font-bold text-4xl'>Total Apps: {data.length}</p>
+            <p className='text-center font-bold text-4xl'>Trending Apps</p>
             <p className='text-center'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus reiciendis eos laborum tempore quis hic quod cupiditate, consequuntur</p>
             {loading ? (
                 <div className='flex items-center justify-center'>
