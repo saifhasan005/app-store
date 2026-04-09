@@ -11,6 +11,8 @@ import Error404 from './Components/ErrorFetch/Error404.jsx';
 
 import HomePage from './Components/HomrPage/HomePage.jsx';
 import AppDetails from './Components/App Details/AppDetails.jsx';
+import ContextApps from './Components/ContextApps/ContextApps.jsx';
+import Dashboard from './Components/Dashboard/Dashboard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,26 +21,31 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <HomePage/>,
+        element: <HomePage />,
       },
       {
         path: '/apps',
         element: <AllApps></AllApps>
       },
       {
-       path: '/installedapps',
-       element: <InstalledApp></InstalledApp> 
+        path: '/installedapps',
+        element: <InstalledApp></InstalledApp>
+      }, {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>
       },
       {
         path: '/apps/:id',
-        element: <AppDetails/>
+        element: <AppDetails />
       }
     ],
-    errorElement: <Error404/>
+    errorElement: <Error404 />
   },
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-<RouterProvider router={router}></RouterProvider>
+    <ContextApps>
+      <RouterProvider router={router}></RouterProvider>
+    </ContextApps>
   </StrictMode>,
 )

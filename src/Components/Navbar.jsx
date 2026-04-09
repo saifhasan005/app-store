@@ -19,6 +19,7 @@ const Navbar = () => {
                     <li><NavLink className={navLinkClass} to={'/'}>Home</NavLink></li>
                     <li><NavLink className={navLinkClass} to={'/apps'}>Apps</NavLink></li>
                     <li><NavLink className={navLinkClass} to={'/installedapps'}>Installation</NavLink></li>
+                    <li><NavLink className={navLinkClass} to={'/dashboard'}>Dashboard</NavLink></li>
                 </ul>
 
                 <button className='hidden md:flex btn btn-primary items-center gap-2'>
@@ -41,6 +42,7 @@ const Navbar = () => {
                     <NavLink className={navLinkClass} to={'/'} onClick={() => setMenuOpen(false)}>Home</NavLink>
                     <NavLink className={navLinkClass} to={'/apps'} onClick={() => setMenuOpen(false)}>Apps</NavLink>
                     <NavLink className={navLinkClass} to={'/installedapps'} onClick={() => setMenuOpen(false)}>Installation</NavLink>
+                    <NavLink className={navLinkClass} to={'/dashboard'} onClick={() => setMenuOpen(false)}>Dashboard</NavLink>
                     <button className='btn btn-primary flex items-center gap-2 w-fit'>
                         <FaGithub /> Contribute Us
                     </button>
